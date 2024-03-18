@@ -64,10 +64,7 @@ export default function Home() {
         </a>
       </div>
       <div className={styles.description}>
-        <p>{now}</p>
-        <p>{date1.toJSON()}</p>
-        <p>{date2.toJSON()}</p>
-        <p>{date3.toJSON()}</p>
+        <p>{now} || {date1.toJSON()} || {date2.toJSON()} || {date3.toJSON()} </p>
       </div>
 
       <div className={styles.center}>
