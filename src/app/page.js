@@ -4,6 +4,13 @@ import dayjs from 'dayjs'
 export default function Home() {
   const now = dayjs();
 
+  const date1 = new Date(); // 현재 날짜 및 시간
+  const date2 = new Date("2022-3-16"); // Invalid Date
+  const date3 = new Date("2022-03-16 00:00:00");
+  console.log(date1);
+  console.log(date2);
+  console.log(date3);
+
 
   return (
     <main className={styles.main}>
@@ -58,6 +65,9 @@ export default function Home() {
       </div>
       <div className={styles.description}>
         <p>{now}</p>
+        <p>{date1.toJSON()}</p>
+        <p>{date2.toJSON()}</p>
+        <p>{date3.toJSON()}</p>
       </div>
 
       <div className={styles.center}>
