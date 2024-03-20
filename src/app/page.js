@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import dayjs from "dayjs";
 export default function Home() {
   const now = dayjs().toJSON();
+  const dayjs1 = dayjs("2022-3-16 00:00:00").toString();
 
   const date1 = new Date(); // 현재 날짜 및 시간
   const date2 = new Date("2022-3-16"); // Invalid Date
@@ -66,7 +67,9 @@ export default function Home() {
       </div>
       <div className={styles.description}>
         <p>
-          dayjs(): {now} || {`new Date() : `} {date1.toJSON()} ||
+          dayjs(): {now} ||
+          {`dayjs("2022-3-16 00:00:00")`} {dayjs1}
+          {`new Date() : `} {date1.toJSON()} ||
           {`new Date("2022-3-16") : `}
           {date2.toJSON()} ||
           {` new Date("2022-03-16 00:00:00") : `}
