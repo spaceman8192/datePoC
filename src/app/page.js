@@ -4,6 +4,8 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import dayjs from "dayjs";
 export default function Home() {
+  const componentType = typeof window === "undefined" ? "server" : "client";
+
   const now = dayjs().toJSON();
   const dayjs0 = dayjs("2022-3-16").toString();
   const dayjs1 = dayjs("2022-3-16 00:00:00").toString();
@@ -68,6 +70,7 @@ export default function Home() {
       </div>
       <div className={styles.description}>
         <p>
+          {componentType} <br />
           dayjs(): {now} <br />
           {`dayjs("2022-3-16")`} {dayjs0} <br />
           {`dayjs("2022-3-16 00:00:00")`} {dayjs1}
