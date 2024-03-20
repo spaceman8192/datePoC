@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import dayjs from "dayjs";
 export default function Home() {
-  const now = dayjs();
+  const now = dayjs().toJSON();
 
   const date1 = new Date(); // 현재 날짜 및 시간
   const date2 = new Date("2022-3-16"); // Invalid Date
@@ -66,9 +66,11 @@ export default function Home() {
       </div>
       <div className={styles.description}>
         <p>
-          dayjs(): {now} || new Date() : {date1.toJSON()} || new
-          Date("2022-3-16") : {date2.toJSON()} || new Date("2022-03-16
-          00:00:00") : {date3.toJSON()}{" "}
+          dayjs(): {now} || {`new Date() : `} {date1.toJSON()} ||
+          {`new Date("2022-3-16") : `}
+          {date2.toJSON()} ||
+          {` new Date("2022-03-16 00:00:00") : `}
+          {date3.toJSON()}
         </p>
       </div>
 
