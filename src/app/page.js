@@ -68,14 +68,14 @@ export default function Home() {
       </div>
       <div className={styles.description}>
         <p>
-          dayjs(): {now} ||
-          {`dayjs("2022-3-16")`} {dayjs0} ||
+          dayjs(): {now} <br />
+          {`dayjs("2022-3-16")`} {dayjs0} <br />
           {`dayjs("2022-3-16 00:00:00")`} {dayjs1}
-          {`new Date() : `} {date1.toJSON()} ||
-          {`new Date("2022-3-16") : `}
-          {date2.toJSON()} ||
-          {` new Date("2022-03-16 00:00:00") : `}
-          {date3.toJSON()}
+          <br />
+          {`new Date() : `} {date1.toJSON()} <br />
+          {`new Date("2022-3-16") : `} {date2.toJSON()} <br />
+          {` new Date("2022-03-16 00:00:00") : `} {date3.toJSON()}
+          <br />
         </p>
       </div>
 
