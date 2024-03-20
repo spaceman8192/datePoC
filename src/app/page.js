@@ -1,6 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
-import dayjs from 'dayjs'
+import dayjs from "dayjs";
 export default function Home() {
   const now = dayjs();
 
@@ -10,7 +12,6 @@ export default function Home() {
   console.log(date1);
   console.log(date2);
   console.log(date3);
-
 
   return (
     <main className={styles.main}>
@@ -64,7 +65,11 @@ export default function Home() {
         </a>
       </div>
       <div className={styles.description}>
-        <p>{now} || {date1.toJSON()} || {date2.toJSON()} || {date3.toJSON()} </p>
+        <p>
+          dayjs(): {now} || new Date() : {date1.toJSON()} || new
+          Date("2022-3-16") : {date2.toJSON()} || new Date("2022-03-16
+          00:00:00") : {date3.toJSON()}{" "}
+        </p>
       </div>
 
       <div className={styles.center}>
@@ -77,8 +82,6 @@ export default function Home() {
           priority
         />
       </div>
-
-      
     </main>
   );
 }
