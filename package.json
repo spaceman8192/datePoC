@@ -19,6 +19,7 @@
     "react-apexcharts": "^1.4.1",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
+    "react-media-recorder": "latest",
     "react-webcam": "^7.2.0",
     "recharts": "^2.12.3",
     "vconsole": "^3.15.1"
