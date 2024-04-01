@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import dayjs from 'dayjs'
+import dayjs from "dayjs";
+import Webcam from "react-webcam";
+
 export default function Home() {
   const now = dayjs();
 
@@ -10,7 +12,6 @@ export default function Home() {
   console.log(date1);
   console.log(date2);
   console.log(date3);
-
 
   return (
     <main className={styles.main}>
@@ -64,9 +65,11 @@ export default function Home() {
         </a>
       </div>
       <div className={styles.description}>
-        <p>{now} || {date1.toJSON()} || {date2.toJSON()} || {date3.toJSON()} </p>
+        <p>
+          {now} || {date1.toJSON()} || {date2.toJSON()} || {date3.toJSON()}{" "}
+        </p>
       </div>
-
+      <Webcam />;
       <div className={styles.center}>
         <Image
           className={styles.logo}
@@ -77,8 +80,6 @@ export default function Home() {
           priority
         />
       </div>
-
-      
     </main>
   );
 }
