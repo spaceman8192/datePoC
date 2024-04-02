@@ -22,6 +22,7 @@
     "react-media-recorder": "latest",
     "react-webcam": "^7.2.0",
     "recharts": "^2.12.3",
+    "recordrtc": "^5.6.2",
     "vconsole": "^3.15.1"
   },
   "devDependencies": {
