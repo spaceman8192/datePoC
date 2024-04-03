@@ -1,6 +1,5 @@
 "use client";
 import RecordRTC, { invokeSaveAsDialog } from "recordrtc";
-import Webcam from "react-webcam";
 import { useState, useRef, useEffect } from "react";
 
 const videoConstraints = {
@@ -14,7 +13,6 @@ export default function RecordRTCComp({ type }) {
   const [blob, setBlob] = useState(null);
   const refVideo = useRef(null);
   const recorderRef = useRef(null);
-  const webcamRef = useRef(null);
   const [recording, setRecording] = useState(false);
   const [recordingAudio, setRecordingAudio] = useState(false);
   const handleRecording = async () => {
@@ -23,7 +21,7 @@ export default function RecordRTCComp({ type }) {
       video:
         type === "video"
           ? {
-              width: 1920,
+              width: 800,
               height: 1080,
               frameRate: 30,
             }
@@ -64,7 +62,7 @@ export default function RecordRTCComp({ type }) {
       return;
     }
 
-    // refVideo.current.srcObject = stream;
+    refVideo.current.srcObject = stream;
   }, [stream, refVideo]);
   return (
     <>
@@ -76,20 +74,22 @@ export default function RecordRTCComp({ type }) {
           <button onClick={handleSave}>다운로드</button>
         </div>
         <div>{recording ? <h2>녹화중</h2> : ""}</div>
+        {recording && type === "video" && (
+          <video
+            autoPlay
+            muted
+            playsinline
+            ref={refVideo}
+            style={{ width: "90%", margin: "1em" }}
+          ></video>
+        )}
+
         {blob && !recording && (
           <video
             src={URL.createObjectURL(blob)}
             controls
             autoPlay
-            ref={refVideo}
-            style={{ width: "700px", margin: "1em" }}
-          />
-        )}
-        {recording && type === "video" && (
-          <Webcam
-            ref={webcamRef}
-            videoConstraints={videoConstraints}
-            audio={false}
+            style={{ width: "90%", margin: "1em" }}
           />
         )}
       </div>
