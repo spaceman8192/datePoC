@@ -78,6 +78,7 @@ export default function RecordRTCComp({ type }) {
           <video
             autoPlay
             muted
+            playsInline
             ref={refVideo}
             style={{ width: "90%", margin: "1em" }}
           ></video>
