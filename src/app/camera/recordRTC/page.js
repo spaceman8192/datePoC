@@ -9,6 +9,8 @@ export default function Page() {
       <RTCComp type="video" />
       <hr />
       <RTCComp type="audio" />
+      <hr />
+      <input type="file" />
     </>
   );
 }
