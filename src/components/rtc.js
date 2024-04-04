@@ -15,14 +15,14 @@ export default function RecordRTCComp({ type }) {
   const recorderRef = useRef(null);
   const [recording, setRecording] = useState(false);
   const [recordingAudio, setRecordingAudio] = useState(false);
-  const [videoType, setVideoType] = useState("video/webm");
-  // 기기별 비디오 타입 지정
-  useEffect(() => {
-    if (isAndroid) setVideoType("video/webm");
-    else if (isIOS) setVideoType("video/mp4");
-    else if (isChrome) setVideoType("video/webm");
-    else if (isSafari) setVideoType("video/mp4");
-  }, []);
+  //   const [videoType, setVideoType] = useState("video/mp4");
+  //   // 기기별 비디오 타입 지정
+  //   useEffect(() => {
+  //     if (isAndroid) setVideoType("video/webm");
+  //     else if (isIOS) setVideoType("video/mp4");
+  //     else if (isChrome) setVideoType("video/webm");
+  //     else if (isSafari) setVideoType("video/mp4");
+  //   }, []);
 
   const handleRecording = async () => {
     setRecording(true);
@@ -41,7 +41,6 @@ export default function RecordRTCComp({ type }) {
     setStream(mediaStream);
     recorderRef.current = new RecordRTC(mediaStream, {
       type,
-      mimeType: videoType,
     });
     recorderRef.current.startRecording();
   };
