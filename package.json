@@ -9,12 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "apexcharts": "^3.48.0",
+    "chart.js": "^4.4.2",
     "date-fns": "^3.6.0",
     "dayjs": "^1.11.10",
     "luxon": "^3.4.4",
     "next": "14.1.3",
     "react": "^18",
+    "react-apexcharts": "^1.4.1",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
+    "react-media-recorder": "latest",
+    "react-webcam": "^7.2.0",
+    "recharts": "^2.12.3",
+    "recordrtc": "^5.6.2",
     "vconsole": "^3.15.1"
   },
   "devDependencies": {
