@@ -31,9 +31,9 @@ export default function Home() {
           <Link href="/pwa">
             <h2>- PWA </h2>
           </Link>
-          <Link href="/date">
+          {/* <Link href="/date">
             <h2>- Date</h2>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </main>

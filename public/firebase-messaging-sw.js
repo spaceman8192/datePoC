@@ -19,7 +19,7 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Cloud Messaging and get a reference to the service
 const messaging = getMessaging(app);
-getToken(messaging, { vapidKey: process.env.VAPID_KEY })
+getToken(messaging, { vapidKey: process.env.VAPID_KEY }) //firebase에서 제공하는 키
   .then((currentToken) => {
     if (currentToken) {
       // Send the token to your server and update the UI if necessary
