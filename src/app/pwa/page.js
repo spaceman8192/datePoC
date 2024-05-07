@@ -1,17 +1,24 @@
 "use client";
 
-export default function Pwa() {
-  const handleNoti = () => {
-    if (Notification.permission === "granted") {
-      new Notification("Hello, world!");
-    } else {
-      Notification.requestPermission().then((permission) => {
-        if (permission === "granted") {
-          new Notification("Hello, world!");
-        }
-      });
-    }
+const handleNoti = () => {
+  const notiTitle = "알림!!";
+  const notiOptions = {
+    body: "알림 메시지입니다.",
+    icon: "/favicon.ico",
   };
+
+  if (Notification.permission === "granted") {
+    new Notification(notiTitle, notiOptions);
+  } else {
+    Notification.requestPermission().then((permission) => {
+      if (permission === "granted") {
+        new Notification(notiTitle, notiOptions);
+      }
+    });
+  }
+};
+
+export default function Pwa() {
   return (
     <div>
       <h1>PWA</h1>
