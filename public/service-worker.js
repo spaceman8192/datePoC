@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * install, activate, caching, push notification 등등 service worker 코드
  */
@@ -19,26 +21,26 @@ const activateEvent = () => {
 activateEvent();
 
 // cache
-const cacheName = "v1";
+// const cacheName = "v1";
 
-const cacheClone = async (e) => {
-  const res = await fetch(e.request);
-  const resClone = res.clone();
+// const cacheClone = async (e) => {
+//   const res = await fetch(e.request);
+//   const resClone = res.clone();
 
-  const cache = await caches.open(cacheName);
-  await cache.put(e.request, resClone);
-  return res;
-};
+//   const cache = await caches.open(cacheName);
+//   await cache.put(e.request, resClone);
+//   return res;
+// };
 
-const fetchEvent = () => {
-  self.addEventListener("fetch", (e) => {
-    e.respondWith(
-      cacheClone(e).catch(() => caches.match(e.request).then((res) => res))
-    );
-  });
-};
+// const fetchEvent = () => {
+//   self.addEventListener("fetch", (e) => {
+//     e.respondWith(
+//       cacheClone(e).catch(() => caches.match(e.request).then((res) => res))
+//     );
+//   });
+// };
 
-fetchEvent();
+// fetchEvent();
 
 /**
  * Push

@@ -4,7 +4,6 @@ const handleNoti = () => {
   const notiTitle = "알림!!";
   const notiOptions = {
     body: "알림 메시지입니다.",
-    icon: "/favicon.ico",
   };
 
   if (Notification.permission === "granted") {
