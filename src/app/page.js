@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
+import "./firebase-messaging-sw.js";
 
 export default function Home() {
   useEffect(() => {
