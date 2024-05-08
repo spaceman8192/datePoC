@@ -67,11 +67,11 @@ self.addEventListener("push", (event) => {
   const data = event.data.json();
   const title = data.title;
   const body = data.message;
-  const icon = "favicon.ico";
+  // const icon = "favicon.ico";
   const notificationOptions = {
     body: body,
     tag: "simple-push-notification-example",
-    icon: icon,
+    // icon: icon,
   };
 
   return self.Notification.requestPermission().then((permission) => {
