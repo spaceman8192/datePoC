@@ -2,21 +2,23 @@
 
 import styles from "./page.module.css";
 import Link from "next/link";
-// import "./firebase-messaging-sw.js";
+import "./firebase-messaging-sw.js";
 import { useEffect } from "react";
 
-const requestPermission = () => {
-  console.log("Requesting permission...");
-  Notification.requestPermission().then((permission) => {
-    if (permission === "granted") {
-      console.log("Notification permission granted.");
-    }
-  });
-};
+// const requestPermission = () => {
+//   console.log("Requesting permission...");
+//   if (Notification.permission !== "granted") {
+//     Notification.requestPermission().then((permission) => {
+//       if (permission === "granted") {
+//         console.log("Notification permission granted.");
+//       }
+//     });
+//   }
+// };
 
 export default function Home() {
   useEffect(() => {
-    requestPermission();
+    // requestPermission();
     // if ("serviceWorker" in navigator) {
     //   // Service Worker API 지원 여부 확인
     //   navigator.serviceWorker

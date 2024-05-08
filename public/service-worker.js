@@ -7,7 +7,7 @@
 // install
 const installEvent = () => {
   self.addEventListener("install", () => {
-    console.log("service worker installed");
+    console.log("service worker installed!");
   });
 };
 installEvent();
@@ -15,7 +15,7 @@ installEvent();
 // activate
 const activateEvent = () => {
   self.addEventListener("activate", () => {
-    console.log("service worker activated");
+    console.log("service worker activated!");
   });
 };
 activateEvent();
@@ -46,6 +46,7 @@ activateEvent();
  * Push
  */
 self.addEventListener("push", (event) => {
+  console.log("Push Received...");
   const data = event.data.json();
   const title = data.title;
   const body = data.message;
