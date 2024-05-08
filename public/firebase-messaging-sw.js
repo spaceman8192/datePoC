@@ -62,21 +62,21 @@ const messaging = firebase.messaging();
 /**
  * Push
  */
-self.addEventListener("push", (event) => {
-  console.log("Push Received...");
-  const data = event.data.json();
-  const title = data.title;
-  const body = data.message;
-  // const icon = "favicon.ico";
-  const notificationOptions = {
-    body: body,
-    tag: "simple-push-notification-example",
-    // icon: icon,
-  };
+// self.addEventListener("push", (event) => {
+//   console.log("Push Received...");
+//   const data = event.data.json();
+//   const title = data.title;
+//   const body = data.message;
+//   // const icon = "favicon.ico";
+//   const notificationOptions = {
+//     body: body,
+//     tag: "simple-push-notification-example",
+//     // icon: icon,
+//   };
 
-  return self.Notification.requestPermission().then((permission) => {
-    if (permission === "granted") {
-      return new self.Notification(title, notificationOptions);
-    }
-  });
-});
+//   return self.Notification.requestPermission().then((permission) => {
+//     if (permission === "granted") {
+//       return new self.Notification(title, notificationOptions);
+//     }
+//   });
+// });
