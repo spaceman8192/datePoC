@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { getMessaging, onMessage, getToken } from "firebase/messaging";
+import { initializeApp } from "firebase/app";
 import { useEffect } from "react";
 // import "./firebase-messaging-sw.js";
 
