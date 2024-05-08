@@ -17,6 +17,23 @@ const requestPermission = () => {
   }
 };
 
+const handleNoti = (payload) => {
+  const notiTitle = payload.notification.title;
+  const notiOptions = {
+    body: payload.notification.body,
+  };
+
+  if (Notification.permission === "granted") {
+    new Notification(notiTitle, notiOptions);
+  } else {
+    Notification.requestPermission().then((permission) => {
+      if (permission === "granted") {
+        new Notification(notiTitle, notiOptions);
+      }
+    });
+  }
+};
+
 export default function Home() {
   const onMessageFCM = async () => {
     const permission = await Notification.requestPermission();
@@ -39,6 +56,7 @@ export default function Home() {
     })
       .then((currentToken) => {
         if (currentToken) {
+          console.log("kk");
           console.log(currentToken);
         } else {
           console.log(
@@ -52,6 +70,7 @@ export default function Home() {
 
     onMessage(messaging, (payload) => {
       console.log("Message received. ", payload);
+      handleNoti(payload);
     });
   };
 
