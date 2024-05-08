@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { getMessaging, onMessage, getToken } from "firebase/messaging";
 import { initializeApp } from "firebase/app";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // import "./firebase-messaging-sw.js";
 
 const requestPermission = () => {
@@ -35,6 +35,8 @@ const handleNoti = (payload) => {
 };
 
 export default function Home() {
+  const [token, setToken] = useState("");
+
   const onMessageFCM = async () => {
     const permission = await Notification.requestPermission();
     if (permission !== "granted") return;
@@ -56,8 +58,8 @@ export default function Home() {
     })
       .then((currentToken) => {
         if (currentToken) {
-          console.log("kk");
           console.log(currentToken);
+          setToken(currentToken);
         } else {
           console.log(
             "No registration token available. Request permission to generate one."
@@ -103,6 +105,7 @@ export default function Home() {
           <Link href="/pwa">
             <h2>- PWA </h2>
           </Link>
+          {token}
           <Link href="/camera/reactWebcam">
             <h2>- reactWebcam </h2>
           </Link>
