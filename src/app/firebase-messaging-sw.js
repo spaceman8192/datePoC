@@ -27,36 +27,39 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Cloud Messaging and get a reference to the service
-const messaging = getMessaging(app);
+// const messaging = getMessaging(app);
+if (typeof window !== "undefined" && typeof window.navigator !== "undefined") {
+  const messaging = getMessaging(app);
 
-async function requestPermission() {
-  console.log("권한 요청 중...");
+  async function requestPermission() {
+    console.log("권한 요청 중...");
 
-  const permission = await Notification.requestPermission();
-  if (permission === "denied") {
-    console.log("알림 권한 허용 안됨");
-    return;
+    const permission = await Notification.requestPermission();
+    if (permission === "denied") {
+      console.log("알림 권한 허용 안됨");
+      return;
+    }
+
+    console.log("알림 권한이 허용됨");
+    console.log(messaging);
+    // alert(JSON.stringify(messaging));
+
+    const token = await getToken(messaging, {
+      vapidKey:
+        "BH1nX9wuDjhbNg5lrVbERPzlGdnlGmWx9pLVzjJutL3a4kB-6VzLMXxY_i4UcIICDZOZAIrt8QQe2Xz1XMq1JZg",
+    });
+
+    if (token) console.log("token: ", token);
+    else console.log("Can not get Token");
+
+    onMessage(messaging, (payload) => {
+      console.log("메시지가 도착했습니다.", payload);
+      // ...
+    });
   }
 
-  console.log("알림 권한이 허용됨");
-  console.log(messaging);
-  // alert(JSON.stringify(messaging));
-
-  const token = await getToken(messaging, {
-    vapidKey:
-      "BH1nX9wuDjhbNg5lrVbERPzlGdnlGmWx9pLVzjJutL3a4kB-6VzLMXxY_i4UcIICDZOZAIrt8QQe2Xz1XMq1JZg",
-  });
-
-  if (token) console.log("token: ", token);
-  else console.log("Can not get Token");
-
-  onMessage(messaging, (payload) => {
-    console.log("메시지가 도착했습니다.", payload);
-    // ...
-  });
+  requestPermission();
 }
-
-requestPermission();
 
 // getToken(messaging, {
 //   vapidKey:
