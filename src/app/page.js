@@ -105,7 +105,7 @@ export default function Home() {
           <Link href="/pwa">
             <h2>- PWA </h2>
           </Link>
-          {token}
+          {/* {token} */}
           <Link href="/camera/reactWebcam">
             <h2>- reactWebcam </h2>
           </Link>
