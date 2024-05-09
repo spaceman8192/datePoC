@@ -78,7 +78,7 @@ export default function Home() {
 
   useEffect(() => {
     requestPermission();
-    onMessageFCM();
+    // onMessageFCM();
     // if ("serviceWorker" in navigator) {
     //   // Service Worker API 지원 여부 확인
     //   navigator.serviceWorker
