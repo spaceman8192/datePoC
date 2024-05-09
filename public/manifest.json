@@ -4,8 +4,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "PWA_POC",
-  "short_name": "PWA",
+  "name": "AI STS",
+  "short_name": "STS",
   "description": "pwa poc\uc6a9\uc785\ub2c8\ub2e4.",
   "icons": [
     {
