@@ -1,7 +1,7 @@
 {
   "theme_color": "#f69435",
   "background_color": "#f69435",
-  "display": "browser",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/",
   "name": "PWA_POC",
@@ -9,22 +9,22 @@
   "description": "pwa poc\uc6a9\uc785\ub2c8\ub2e4.",
   "icons": [
     {
-      "src": "/imgae/icon-192x192.png",
+      "src": "/image/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/imgae/icon-256x256.png",
+      "src": "/image/icon-256x256.png",
       "sizes": "256x256",
       "type": "image/png"
     },
     {
-      "src": "/imgae/icon-384x384.png",
+      "src": "/image/icon-384x384.png",
       "sizes": "384x384",
       "type": "image/png"
     },
     {
-      "src": "/imgae/icon-512x512.png",
+      "src": "/image/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
