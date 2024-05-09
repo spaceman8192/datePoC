@@ -59,7 +59,7 @@ export default function Home() {
       .then((currentToken) => {
         if (currentToken) {
           console.log(currentToken);
-          // setToken(currentToken);
+          setToken(currentToken);
         } else {
           console.log(
             "No registration token available. Request permission to generate one."
