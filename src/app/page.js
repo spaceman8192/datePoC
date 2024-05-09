@@ -61,12 +61,14 @@ export default function Home() {
           console.log(currentToken);
           setToken(currentToken);
         } else {
+          setToken("no current Token :" + currentToken);
           console.log(
             "No registration token available. Request permission to generate one."
           );
         }
       })
       .catch((err) => {
+        setToken("error occured : " + err);
         console.log("An error occurred while retrieving token. ", err);
       });
 
