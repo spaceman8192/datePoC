@@ -35,7 +35,7 @@ const handleNoti = (payload) => {
 };
 
 export default function Home() {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState("empty");
 
   const onMessageFCM = async () => {
     const permission = await Notification.requestPermission();
